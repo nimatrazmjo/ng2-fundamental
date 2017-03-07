@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { EventsComponent } from './events/events.component';
+import { EventThumbnailComponent } from './events/event-thumbnail/event-thumbnail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EventsComponent,
+    EventThumbnailComponent
   ],
   imports: [
     BrowserModule,
