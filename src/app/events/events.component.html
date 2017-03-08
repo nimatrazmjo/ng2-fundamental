@@ -1,3 +1,4 @@
 <h2> List of events </h2>
 <hr>
-<app-event-thumbnail [event]="event_parent" (EventClick)="RecieveData($event)"></app-event-thumbnail>
+<app-event-thumbnail #thumbnail [event]="event_parent" (EventClick)="RecieveData($event)"></app-event-thumbnail>
+<h4>{{thumbnail.child_text}}</h4>

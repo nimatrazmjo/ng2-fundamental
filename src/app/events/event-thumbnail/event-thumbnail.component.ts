@@ -8,6 +8,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class EventThumbnailComponent implements OnInit {
   @Input()  event: any;
   @Output() EventClick = new EventEmitter();
+
+  child_text = 'This text is from child component'
+
   constructor() { }
 
   ngOnInit() {
@@ -15,4 +18,5 @@ export class EventThumbnailComponent implements OnInit {
   clikedMe() {
     this.EventClick.emit(this.event.name)
   }
+
 }
