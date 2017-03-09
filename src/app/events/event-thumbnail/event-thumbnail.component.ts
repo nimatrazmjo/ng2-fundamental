@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+
 @Component({
   selector: 'app-event-thumbnail',
   templateUrl: './event-thumbnail.component.html',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class EventThumbnailComponent implements OnInit {
   @Input() event: any
-  constructor() { }
+  constructor( ) { }
 
   ngOnInit() {
   }
@@ -26,4 +27,5 @@ export class EventThumbnailComponent implements OnInit {
       return 'green bold'
     return ''
   }
+
 }
