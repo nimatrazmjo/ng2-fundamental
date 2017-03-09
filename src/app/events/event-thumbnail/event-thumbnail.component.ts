@@ -6,17 +6,24 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./event-thumbnail.component.css']
 })
 export class EventThumbnailComponent implements OnInit {
-  @Input()  event: any;
-  @Output() EventClick = new EventEmitter();
-
-  child_text = 'This text is from child component'
-
+  @Input() event: any
   constructor() { }
 
   ngOnInit() {
   }
-  clikedMe() {
-    this.EventClick.emit(this.event.name)
+
+  LateStart() {
+    const colorStatus = this.event && this.event.time === '8:00 am'
+    return {green: colorStatus, bold: colorStatus}
   }
 
+  getCardStyle () {
+     return {height: '200px', 'margin-bottom': '10px'}
+  }
+
+  EarlyStart () {
+    if(this.event && this.event.time === '8:00 am')
+      return 'green bold'
+    return ''
+  }
 }
