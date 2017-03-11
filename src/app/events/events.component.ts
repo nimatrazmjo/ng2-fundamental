@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EventsService } from './events.service';
 import {ToastrService} from '../common/toastr.service';
 
+
 @Component({
-  selector: 'app-events',
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.css']
 })
@@ -18,6 +18,7 @@ export class EventsComponent implements OnInit {
   RecieveData(data) {
       console.log('Recieved :', data)
   }
+
   checkToastrAction(eventName) {
     this.toastr.success(eventName)
   }
