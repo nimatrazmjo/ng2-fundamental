@@ -5,7 +5,7 @@ export const EVENTS =[
     date: '9/26/2036',
     time: '10:00 am',
     price: 599.99,
-    imageUrl: '/app/assets/images/angularconnect-shield.png',
+    imageUrl: 'app/assets/images/angularconnect-shield.png',
     location: {
       address: '1057 DT',
       city: 'London',
@@ -309,7 +309,7 @@ export const EVENTS =[
     date: '2/10/2037',
     time: '9:00 am',
     price: 400.00,
-    imageUrl: '/app/assets/images/ng-vegas.png',
+    imageUrl: '/app/assets/images/ng-vegas1.png',
     location: {
       address: 'The Excalibur',
       city: 'Kabul',

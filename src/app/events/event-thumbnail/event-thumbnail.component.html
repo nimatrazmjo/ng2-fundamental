@@ -1,4 +1,4 @@
-<div class="card bg-info" [ngStyle]="getCardStyle()">
+<div class="card bg-info" [ngStyle]="getCardStyle()" [routerLink] = "['/events', event.id]">
     <div class="card-block">
         <div class="card-title"> <h3>{{event?.name}}</h3> </div>
         <div class="card-text">
