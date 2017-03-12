@@ -34,7 +34,19 @@ import { EventRouteActivatorService } from "./events/event-details/event-route-a
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [EventsService, ToastrService, EventRouteActivatorService],
+  providers: [
+    EventsService,
+    ToastrService,
+    EventRouteActivatorService,
+    { provide : 'canDe-activeEvent', useValue : checkDirtySide}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+export function checkDirtySide(component: CreateEventComponent) {
+  if(component.Dirty)
+      return window.confirm(" You have not saved this event, do you really want to cancel ?")
+  return true
+}
