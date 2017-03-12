@@ -1,4 +1,5 @@
-<div class="page-header"><h2>Event list</h2></div>
+<div class="page-header"><h2>Upcoming Jobs.af Events</h2></div>
+<hr>
 <div class="row">
     <div class="col-md-4" *ngFor="let event of event_parent">
         <app-event-thumbnail #thumbnail [event] = "event"  (click)="checkToastrAction(event.name)"></app-event-thumbnail>

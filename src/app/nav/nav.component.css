@@ -2,5 +2,8 @@
     #search {
         display: none;
     }
-    
+
+}
+li > a.active {
+  color: orange !important;
 }
