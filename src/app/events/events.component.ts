@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from './events.service';
 import {ToastrService} from '../common/toastr.service';
+import {IEvent} from "./event.model";
 
 
 @Component({
@@ -8,7 +9,7 @@ import {ToastrService} from '../common/toastr.service';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
-  event_parent :any
+  event_parent :IEvent[]
   constructor(private _eventsService : EventsService, private toastr : ToastrService) { }
 
   ngOnInit() {

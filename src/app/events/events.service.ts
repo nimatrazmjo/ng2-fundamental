@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { EVENTS } from './mock_events';
+import {IEvent} from "./event.model";
 
 
 @Injectable()
@@ -11,7 +12,7 @@ export class EventsService {
     return EVENTS
   }
 
-  getEvent(id:number) {
+  getEvent(id:number):IEvent {
     return EVENTS.find(event => event.id === id)
   }
 }
