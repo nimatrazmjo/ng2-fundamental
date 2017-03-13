@@ -6,7 +6,7 @@ import { Router} from "@angular/router";
   styleUrls: ['./create-event.component.css']
 })
 export class CreateEventComponent implements OnInit {
-  Dirty:boolean = true
+  Dirty:boolean = false
   constructor(private  router : Router) { }
 
   ngOnInit() {
