@@ -2,8 +2,24 @@
     #search {
         display: none;
     }
-
+    .navbar-nav {
+      margin-right: auto !important;
+    }
 }
-li > a.active {
+
+@media (min-width: 700px) {
+  form > input[type='text'] {
+    width: 400px;
+  }
+}
+a.active {
   color: orange !important;
+}
+
+.user-link {
+  text-decoration: none;
+  color: white;
+}
+.navbar-nav {
+  margin-right: 16% !important;
 }

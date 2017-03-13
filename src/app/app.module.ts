@@ -3,19 +3,22 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { EventsComponent } from './events/events.component';
-import { EventThumbnailComponent } from './events/event-thumbnail/event-thumbnail.component';
 import { NavComponent } from './nav/nav.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { EventsService } from './events/events.service';
 import { ToastrService } from "./common/toastr.service";
-import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { appRoutes } from "./routes";
-import { CreateEventComponent } from './events/create-event/create-event.component';
 import { Error404Component } from "./errors/404.component";
-import { EventRouteActivatorService } from "./events/event-details/event-route-activator.service";
+
+import {
+  EventsComponent,
+  EventThumbnailComponent,
+  EventsService,
+  EventDetailsComponent,
+  CreateEventComponent,
+  EventRouteActivatorService
+} from "./events/index";
 
 @NgModule({
   declarations: [
