@@ -10,8 +10,8 @@ import { Router } from "@angular/router";
 })
 export class ProfileComponent implements OnInit {
   formProfile : FormGroup
-  firstName : FormControl
-  lastName : FormControl
+  private firstName : FormControl
+  private lastName : FormControl
 
   constructor(private _authService : AuthService, private router : Router) { }
 
