@@ -6,3 +6,4 @@ export * from "./event.model";
 export * from "./events.service";
 export * from "./events.component";
 export * from "./mock_events";
+export * from "./event-details/create-session/create-session.component";
