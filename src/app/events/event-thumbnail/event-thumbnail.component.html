@@ -2,13 +2,13 @@
     <div class="card-block">
         <div class="card-title"> <h3>{{event?.name}}</h3> </div>
         <div class="card-text">
-            <div>Date : {{event?.date}}</div>
+            <div>Date : {{event?.date | date}}</div>
             <div  [ngClass]="{green : event?.time === '8:00 am', bold : event?.time === '8:00 am'}"  [ngSwitch] = "event?.time">Time : {{event?.time}}
                 <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
                 <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
                 <span *ngSwitchDefault>(Normal Start)</span>
             </div>
-            <div>Price : ${{event?.price}}</div>
+            <div>Price : {{event?.price | currency:'USD':true }}</div>
             <div [hidden]="!event?.location">
                 <span>Location : {{event?.location?.address}}</span>
                 <span>&nbsp;</span>

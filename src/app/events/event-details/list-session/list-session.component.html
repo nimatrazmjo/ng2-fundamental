@@ -1,12 +1,13 @@
-<div class="row" *ngFor="let session of all_session">
+<div class="row" *ngFor="let session of visible_sessions">
   <div class="col-md-12">
     <app-collapsible-well>
       <div card-title>
           {{session.name}}
+        <i class="glyphicon glyphicon-fire" *ngIf="session.voters.length > 1" style="color: red"> {{session.voters.length}} </i>
       </div>
       <div card-content>
         <h6>{{session.presenter}}</h6>
-        <span>Duration: {{session.duration}}</span><br />
+        <span>Duration: {{session.duration | duration}}</span><br />
         <span>Level: {{session.level}}</span>
         <p>{{session.abstract}}</p>
       </div>

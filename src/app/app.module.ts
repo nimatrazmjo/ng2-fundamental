@@ -10,6 +10,8 @@ import { NavComponent } from './nav/nav.component';
 import { ToastrService } from "./common/toastr.service";
 import { appRoutes } from "./routes";
 import { Error404Component } from "./errors/404.component";
+import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
+import { DurationPipe } from './shared/duration.pipe';
 
 import {
   EventsComponent,
@@ -21,7 +23,7 @@ import {
   CreateSessionComponent,
   ListSessionComponent
 } from "./events/index";
-import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
+
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-
     Error404Component,
     CreateSessionComponent,
     ListSessionComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
