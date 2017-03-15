@@ -1,6 +1,8 @@
 <div (click)="toggleContent()" class="card">
-  <div class="card-block">
-    <h4>{{title}}</h4>
-    <ng-content *ngIf="visible"></ng-content>
+  <div class="well bg-faded">
+    <h4>
+      <ng-content select="[card-title]"></ng-content>
+    </h4>
+    <ng-content *ngIf="visible" select="[card-content]"></ng-content>
   </div>
 </div>
