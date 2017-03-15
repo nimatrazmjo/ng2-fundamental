@@ -1,0 +1,6 @@
+<div (click)="toggleContent()" class="card">
+  <div class="card-block">
+    <h4>{{title}}</h4>
+    <ng-content *ngIf="visible"></ng-content>
+  </div>
+</div>
