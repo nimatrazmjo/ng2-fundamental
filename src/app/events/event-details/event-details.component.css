@@ -2,3 +2,10 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+a{
+  color: orange !important;
+}
+
+a:hover {
+  cursor: pointer;
+}

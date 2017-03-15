@@ -18,7 +18,8 @@ import {
   EventDetailsComponent,
   CreateEventComponent,
   EventRouteActivatorService,
-  CreateSessionComponent
+  CreateSessionComponent,
+  ListSessionComponent
 } from "./events/index";
 
 
@@ -31,7 +32,8 @@ import {
     EventDetailsComponent,
     CreateEventComponent,
     Error404Component,
-    CreateSessionComponent
+    CreateSessionComponent,
+    ListSessionComponent
   ],
   imports: [
     BrowserModule,
