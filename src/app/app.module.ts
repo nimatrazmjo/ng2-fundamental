@@ -7,11 +7,20 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
-import { TOASTR_TOKEN, Toastr } from "./common/toastr.service";
+
 import { appRoutes } from "./routes";
 import { Error404Component } from "./errors/404.component";
-import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
 import { DurationPipe } from './shared/duration.pipe';
+
+import {
+  CollapsibleWellComponent,
+  TOASTR_TOKEN,
+  Toastr,
+  JQ_TOKEN,
+  SimpleModalComponent,
+  ModalTriggerDirective
+} from './common/index';
+
 
 import {
   EventsComponent,
@@ -21,10 +30,11 @@ import {
   CreateEventComponent,
   EventRouteActivatorService,
   CreateSessionComponent,
-  ListSessionComponent
+  ListSessionComponent,
 } from "./events/index";
 
-declare let toastr : Toastr
+declare let toastr : Toastr;
+declare let jQuery : Object;
 
 @NgModule({
   declarations: [
@@ -38,7 +48,9 @@ declare let toastr : Toastr
     CreateSessionComponent,
     ListSessionComponent,
     CollapsibleWellComponent,
-    DurationPipe
+    DurationPipe,
+    SimpleModalComponent,
+    ModalTriggerDirective
   ],
   imports: [
     BrowserModule,
@@ -51,7 +63,8 @@ declare let toastr : Toastr
   providers: [
     EventsService,
     EventRouteActivatorService,
-    {provide : TOASTR_TOKEN, useValue : toastr},
+    { provide : TOASTR_TOKEN, useValue : toastr},
+    { provide : JQ_TOKEN, useValue : jQuery},
     { provide : 'canDe-activeEvent', useValue : checkDirtySide}
   ],
   bootstrap: [AppComponent]
