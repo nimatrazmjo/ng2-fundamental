@@ -7,7 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
-import { ToastrService } from "./common/toastr.service";
+import { TOASTR_TOKEN, Toastr } from "./common/toastr.service";
 import { appRoutes } from "./routes";
 import { Error404Component } from "./errors/404.component";
 import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
@@ -24,7 +24,7 @@ import {
   ListSessionComponent
 } from "./events/index";
 
-
+declare let toastr : Toastr
 
 @NgModule({
   declarations: [
@@ -50,12 +50,14 @@ import {
   ],
   providers: [
     EventsService,
-    ToastrService,
     EventRouteActivatorService,
+    {provide : TOASTR_TOKEN, useValue : toastr},
     { provide : 'canDe-activeEvent', useValue : checkDirtySide}
   ],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }
 
 

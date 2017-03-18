@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from './events.service';
-import {ToastrService} from '../common/toastr.service';
 import {IEvent} from "./event.model";
 
 
@@ -10,7 +9,7 @@ import {IEvent} from "./event.model";
 })
 export class EventsComponent implements OnInit {
   event_parent :IEvent[]
-  constructor(private _eventsService : EventsService, private toastr : ToastrService) { }
+  constructor(private _eventsService : EventsService) { }
 
   ngOnInit() {
     this.event_parent = this._eventsService.getEvents()
@@ -18,9 +17,5 @@ export class EventsComponent implements OnInit {
 
   RecieveData(data) {
       console.log('Recieved :', data)
-  }
-
-  checkToastrAction(eventName) {
-    this.toastr.success(eventName)
   }
 }
