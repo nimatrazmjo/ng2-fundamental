@@ -31,7 +31,10 @@ import {
   EventRouteActivatorService,
   CreateSessionComponent,
   ListSessionComponent,
+  UpvoteComponent,
+  VoteService
 } from "./events/index";
+import {AuthService} from "./user/auth.service";
 
 declare let toastr : Toastr;
 declare let jQuery : Object;
@@ -50,7 +53,8 @@ declare let jQuery : Object;
     CollapsibleWellComponent,
     DurationPipe,
     SimpleModalComponent,
-    ModalTriggerDirective
+    ModalTriggerDirective,
+    UpvoteComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +67,8 @@ declare let jQuery : Object;
   providers: [
     EventsService,
     EventRouteActivatorService,
+    VoteService,
+    AuthService,
     { provide : TOASTR_TOKEN, useValue : toastr},
     { provide : JQ_TOKEN, useValue : jQuery},
     { provide : 'canDe-activeEvent', useValue : checkDirtySide}

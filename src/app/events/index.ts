@@ -8,3 +8,5 @@ export * from "./events.component";
 export * from "./mock_events";
 export * from "./event-details/create-session/create-session.component";
 export * from "./event-details/list-session/list-session.component";
+export * from "./event-details/list-session/upvote/upvote.component";
+export * from "./event-details/list-session/upvote/vote.service";

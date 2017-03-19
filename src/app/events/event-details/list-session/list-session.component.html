@@ -1,9 +1,14 @@
 <div class="row" *ngFor="let session of visible_sessions">
-  <div class="col-md-12">
+  <div class="col-md-1">
+    <upvote (vote)="toggleVote(session)" [count] = "session.voters.length" [voted]="userHasVoted(session)">
+
+    </upvote>
+  </div>
+  <div class="col-md-10">
     <app-collapsible-well>
       <div card-title>
           {{session.name}}
-        <i class="glyphicon glyphicon-fire" *ngIf="session.voters.length > 1" style="color: red"> {{session.voters.length}} </i>
+        <i class="fa fa-fire" *ngIf="session.voters.length > 1" style="color: red" >  </i>
       </div>
       <div card-content>
         <h6>{{session.presenter}}</h6>
