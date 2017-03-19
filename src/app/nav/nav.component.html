@@ -15,13 +15,17 @@
         </ul>
         <form class="form-inline my-2 my-lg-0 mr-auto" id="search" (ngSubmit) = "searchSession(searchTerm)">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" [(ngModel)]="searchTerm" name="searchTerm">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="button" modal-trigger >Search</button>
+
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" modal-trigger="searchResult" >Search</button>
+
         </form>
-        <span><a  [routerLink]="['/user/profile']" routerLinkActive="active" class="my-2 user-link">Welcome Nimatullah</a></span>
+        <span>
+          <a  [routerLink]="['/user/profile']" routerLinkActive="active" class="my-2 user-link">Welcome Nimatullah</a>
+        </span>
     </div>
 </nav>
 
-<simple-modal title="Matching Sessions" >
+<simple-modal closeOnBody="false" elementId="searchResult" title="Matching Sessions" >
   <div class="list-group">
     <a class="list-group-item" *ngFor="let session of foundSession" [routerLink]="['/events', session.eventId]">{{session.name}}</a>
   </div>
