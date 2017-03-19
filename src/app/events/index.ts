@@ -10,3 +10,4 @@ export * from "./event-details/create-session/create-session.component";
 export * from "./event-details/list-session/list-session.component";
 export * from "./event-details/list-session/upvote/upvote.component";
 export * from "./event-details/list-session/upvote/vote.service";
+export * from "./create-event/location-validator.directive";

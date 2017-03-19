@@ -11,7 +11,7 @@ import { NavComponent } from './nav/nav.component';
 import { appRoutes } from "./routes";
 import { Error404Component } from "./errors/404.component";
 import { DurationPipe } from './shared/duration.pipe';
-
+import {AuthService} from "./user/auth.service";
 import {
   CollapsibleWellComponent,
   TOASTR_TOKEN,
@@ -32,9 +32,9 @@ import {
   CreateSessionComponent,
   ListSessionComponent,
   UpvoteComponent,
-  VoteService
+  VoteService,
+  LocationValidatorDirective
 } from "./events/index";
-import {AuthService} from "./user/auth.service";
 
 declare let toastr : Toastr;
 declare let jQuery : Object;
@@ -54,7 +54,8 @@ declare let jQuery : Object;
     DurationPipe,
     SimpleModalComponent,
     ModalTriggerDirective,
-    UpvoteComponent
+    UpvoteComponent,
+    LocationValidatorDirective
   ],
   imports: [
     BrowserModule,
