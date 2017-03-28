@@ -1,0 +1,47 @@
+{
+  "name": "event",
+  "plural": "events",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "time": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "location": {
+      "type": "location"
+    },
+    "OnlineUrl": {
+      "type": "string"
+    },
+    "sessions": {
+      "type": [
+        "session"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

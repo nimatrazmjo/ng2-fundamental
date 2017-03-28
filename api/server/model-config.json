@@ -34,5 +34,17 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "event": {
+    "dataSource": "db",
+    "public": true
+  },
+  "session": {
+    "dataSource": "db",
+    "public": false
+  },
+  "location": {
+    "dataSource": "db",
+    "public": false
   }
 }

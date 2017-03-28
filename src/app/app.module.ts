@@ -74,7 +74,8 @@ declare let jQuery : Object;
     { provide : JQ_TOKEN, useValue : jQuery},
     { provide : 'canDe-activeEvent', useValue : checkDirtySide}
   ],
-  bootstrap: [AppComponent]
+  bootstrap:
+    [AppComponent]
 })
 
 
