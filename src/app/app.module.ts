@@ -33,7 +33,8 @@ import {
   ListSessionComponent,
   UpvoteComponent,
   VoteService,
-  LocationValidatorDirective
+  LocationValidatorDirective,
+  EventListResolverService
 } from "./events/index";
 
 declare let toastr : Toastr;
@@ -70,6 +71,8 @@ declare let jQuery : Object;
     EventRouteActivatorService,
     VoteService,
     AuthService,
+
+    EventListResolverService,
     { provide : TOASTR_TOKEN, useValue : toastr},
     { provide : JQ_TOKEN, useValue : jQuery},
     { provide : 'canDe-activeEvent', useValue : checkDirtySide}
