@@ -1,30 +1,40 @@
 import { Injectable } from '@angular/core';
 import {IUser} from "./user.model";
+import {Headers, Http, RequestOptions} from "@angular/http";
+import { Router } from "@angular/router";
+import 'rxjs';
+import {Observable} from "rxjs";
 
 @Injectable()
 export class AuthService {
 
-  currentUser : IUser
+ public currentUser : IUser
 
 
-  constructor() {
-    this.currentUser = {
-      id : 1,
-      firstName : 'Nimatullah',
-      lastName : 'Razmjo',
-      userName :'nimat',
-
-    }
+  constructor(private http : Http, private router : Router) {
   }
 
+  login (username : string, password : string) {
+    let headers = new Headers({'Content-Type': 'application/json'})
+    let option = new RequestOptions({headers: headers})
+    let loginInfo = {email: username, password: password}
+    return this.http.post("/api/login", JSON.stringify(loginInfo), option)
+      .do(res => {
+        if (res) {
+          this.currentUser = res.json();
+        }
+      }).catch( error => {
+        return Observable.of(false)
+      });
+
+  }
   isAuthenticate() {
+
     return !!this.currentUser
   }
 
   updateCurrentUser(firstName: string, lastName: string) {
     this.currentUser.firstName = firstName
     this.currentUser.lastName = lastName
-
-    console.log(this.currentUser)
   }
 }

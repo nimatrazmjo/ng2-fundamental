@@ -39,21 +39,9 @@ export class EventsService {
 
 
   searchEvent(term) {
-    var termLocal = term.toLocaleLowerCase()
-    var results: ISession[] = [];
-    EVENTS.forEach(event => {
-      var matchingSession = event.sessions.filter(session => session.name.toLocaleLowerCase().indexOf(termLocal) > -1);
-      matchingSession = matchingSession.map((session:any) => {
-        session.eventId = event.id;
-        return session
-      })
-      results = results.concat(matchingSession)
+    return this.http.get('/api/sessions/search?search=' + term).map((response :  Response)=>{
+      return response.json()
     })
-    var emitter = new EventEmitter(true);
-    setTimeout(() => {
-      emitter.emit(results)
-    },100);
-    return emitter
   }
 
 
