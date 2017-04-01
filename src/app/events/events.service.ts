@@ -12,7 +12,7 @@ export class EventsService {
 
 
   getEvents (): Observable<IEvent[]> {
-    return this.http.get('/api/api/events').map((response : Response) => {
+    return this.http.get('/server/api/events').map((response : Response) => {
         return <IEvent[]>response.json()
     }).catch(this.HandleError)
   }
@@ -26,7 +26,8 @@ export class EventsService {
   saveForm(event): Observable<IEvent> {
     let headers = new Headers({'Content-Type':'application/json'})
     let options = new RequestOptions({headers : headers})
-    return this.http.post('/api/api/events',JSON.stringify(event),options).map((response: Response)=> {
+
+    return this.http.post('/server/api/events',JSON.stringify(event),options).map((response: Response)=> {
       return response.json()
     }).catch(this.HandleError)
   }

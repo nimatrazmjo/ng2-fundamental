@@ -18,7 +18,7 @@ export class AuthService {
     let headers = new Headers({'Content-Type': 'application/json'})
     let option = new RequestOptions({headers: headers})
     let loginInfo = {email: username, password: password}
-    return this.http.post("/api/login", JSON.stringify(loginInfo), option)
+    return this.http.post("/server/login", JSON.stringify(loginInfo), option)
       .do(res => {
         if (res) {
           this.currentUser = res.json();
